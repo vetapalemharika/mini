@@ -7,11 +7,14 @@ export default function App() {
   const [data, setData] = useState(null);
   const [loading, setLoading] = useState(false);
 
+  // ✅ Use your actual deployed backend URL here
+  const BACKEND_URL = "https://your-backend-url.onrender.com";
+
   const handleSubmit = async (e) => {
     e.preventDefault();
     setLoading(true);
     try {
-      const res = await axios.post("http://localhost:5000/business-data", {
+      const res = await axios.post(`${BACKEND_URL}/business-data`, {
         name: businessName,
         location,
       });
@@ -24,7 +27,7 @@ export default function App() {
 
   const regenerateHeadline = async () => {
     try {
-      const res = await axios.get("http://localhost:5000/regenerate-headline", {
+      const res = await axios.get(`${BACKEND_URL}/regenerate-headline`, {
         params: { name: businessName, location },
       });
       setData((prev) => ({ ...prev, headline: res.data.headline }));
