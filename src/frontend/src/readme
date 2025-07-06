@@ -1,0 +1,12 @@
+# 🌟 Mini Local Business Dashboard
+
+This project is a mini dashboard where small businesses can see simulated SEO and Google Business data.
+
+---
+
+## 🛠️ Project Structure
+
+```
+mini-local-business-dashboard/
+  ├── backend/
+  └── frontend
